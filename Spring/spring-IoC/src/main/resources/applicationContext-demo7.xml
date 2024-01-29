@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd   http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+    <context:annotation-config/>
+
+    <!-- M1: Constructor-based injection -->
+    <bean id="stu" class="com.example.demo7_xmlAC.Student">
+        <constructor-arg name="id" value="33"/>
+        <constructor-arg value="xiaoyun"/>
+        <constructor-arg name="address" ref="addr"/>
+    </bean>
+
+    <!-- M2: Setter-base injection -->
+    <bean id="tch" class="com.example.demo7_xmlAC.Teacher">
+        <property name="id" value="42"/>
+        <property name="name" value="zihan"/>
+        <property name="address" ref="addr"/>
+    </bean>
+
+    <bean id="addr" class="com.example.demo7_xmlAC.Address">
+        <property name="city" value="MUC"/>
+    </bean>
+</beans>
