@@ -180,4 +180,18 @@ Outer is garbage collected
 End of program.
 ```
 
-Conclusion: class `Main` 
+From the above code and execution result, class `Main` holds three references:
+
+<img src="../images/inner_class_2.png" style="zoom:70%;" />
+
+When `outerObject = null;` and `plainObject = null;` is executed, only `plainObject` can be GC, since `outerObject` is still strong referenced by `outerObjectRef` which is inside `innerObject`:
+
+<img src="../images/inner_class_3.png" style="zoom:70%;" />
+
+
+
+When `innerObject = null;` is executed, the memory of `innerObject` can be GC, and in turn no reference now holds `outerObject` anymore. Therefore, `outerObject`'s memory can be GC.
+
+<img src="../images/inner_class_4.png" style="zoom:70%;" />
+
+**Conclusion**: if outer class object reference is nullified while inner class object is not, this may cause **memory leak**.
