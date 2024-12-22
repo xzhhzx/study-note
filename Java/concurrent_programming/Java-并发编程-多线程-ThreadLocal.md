@@ -63,7 +63,11 @@ The picture below demonstrates the reason. Notice that the object `ThreadLocal` 
 
 Suppose that the key of `Entry` is also a strong reference. Then if `var_0` is set to `null`, the `ThreadLocal` object is still not ready for GC, since another strong reference still holds the object and prevents it from GC. **Memory leak happens :(**
 
-> Ref: 但是对于`ThreadLocal`来说，即使我们使用结束，也会因为线程本身存在该对象的引用，处于对象可达状态，垃圾回收器无法回收。这个时候当`ThreadLocal`太多的时候就会出现内存泄漏的问题。(*source: [ThreadLocal的Entry为什么要继承WeakReference? - 知乎 (zhihu.com)](https://www.zhihu.com/question/458432418)*)
+> **Ref**: 但是对于`ThreadLocal`来说，即使我们使用结束，也会因为线程本身存在该对象的引用，处于对象可达状态，垃圾回收器无法回收。这个时候当`ThreadLocal`太多的时候就会出现内存泄漏的问题。(*source: [ThreadLocal的Entry为什么要继承WeakReference? - 知乎 (zhihu.com)](https://www.zhihu.com/question/458432418)*)
+>
+> 
+>
+> **个人理解 `WeakReference` 的使用场景**：当你需要一个指向某个对象的引用（如进行一些读写访问和操作），但是当该对象的强引用一旦被移除，那么访问和操作就没有意义了，也应该立即被移除。这就需要用到 `WeakReference`。因此，`WeakReference` 一般也是和强引用同时使用的，也即单独使用 `WeakReference` 指向一个对象没有任何意义。
 
 
 

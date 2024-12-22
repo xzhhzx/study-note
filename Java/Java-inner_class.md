@@ -22,9 +22,9 @@
 
 <img src="../images/inner_class_1.png" style="zoom:70%;" />
 
-### Inner class
+### Inner member class
 
-Inner class object must be created after creating an outer class object:
+Inner member class is a non- static member of its enclosing class (just like one of the fields). Its object can only be created after creating an outer class object:
 
 ```java
 OuterClass outerObject = new OuterClass();
@@ -35,7 +35,7 @@ OuterClass.InnerClass innerObject = outerObject.new InnerClass();
 
 ### Local & Anonymous class
 
-* ***Local classes*** are defined in a block of code (method, loop, if-clause). But they are usually **inside a method**.
+* ***Local classes*** are defined in a block of code (method, loop, if-clause). But they are usually **inside a method**, just like a local variable.
 
 * ***Anonymous classes*** are local classes without names.
 
@@ -103,7 +103,7 @@ public class Main {
 ### Memory leak problem
 
 
-Nested class with `finalize()` method override, to show when it is garbage collected:
+Here is an example. Nested class with `finalize()` method override, to show when it is garbage collected:
 ```java
 public class OuterClass {
 
@@ -194,4 +194,16 @@ When `innerObject = null;` is executed, the memory of `innerObject` can be GC, a
 
 <img src="../images/inner_class_4.png" style="zoom:70%;" />
 
-**Conclusion**: if outer class object reference is nullified while inner class object is not, this may cause **memory leak**.
+* **Conclusion**: if outer class object reference is nullified while inner class object is not, this may cause **memory leak**.
+
+* **Suggestion**: memory leak problem can happen in non-static nester classes. It is recommended to use static nested class where applicable.
+
+
+
+
+
+### When to use what?
+
+The four types of nested classes have different use cases, as suggested by *Effective Java - Item 22*:
+
+> To recap, there are four different kinds of nested classes, and each has its place. If a nested class needs to be visible outside of a single method or is too long to fit comfortably inside a method, use a member class. If each instance of the member class needs a reference to its enclosing instance, make it non-static; otherwise, make it static. Assuming the class belongs inside a method, if you need to create instances from only one location and there is a preexisting type that characterizes the class, make it an anonymous class; otherwise, make it a local class
