@@ -1,0 +1,3 @@
+* *Annotations*, a form of metadata, provide data about a program that is not part of the program itself. Annotations have no direct effect on the operation of the code they annotate.
+* Annotations are (closely-coupled) configurations, similar to XML (loosely-coupled, see more about XML vs. annotations)
+* Annotation itself has no effect on code. It needs another class to process the annotation with reflection mechanism and add real logic.  https://en.wikipedia.org/wiki/Java_annotation#Processing
