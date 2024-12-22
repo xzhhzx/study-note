@@ -1,0 +1,46 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.2.xsd http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+
+    <bean id="adder" class="com.example.XML_demo.Adder"/>
+    <bean id="beverage" class="com.example.XML_demo.Beverage"/>
+    <bean id="covid" class="com.example.XML_demo.Covid"/>
+
+    <!--  Define Aspect beans  -->
+    <bean id="loggingAspectBean" class="com.example.XML_demo.LoggingAspect"/>
+    <bean id="validationAspectBean" class="com.example.XML_demo.ValidationAspect"/>
+    <bean id="demoAspectBean" class="com.example.XML_demo.DemoAspect"/>
+
+    <aop:config>
+        <!-- Shared pointcuts can be declared here, before aspect definition -->
+
+
+        <!-- Aspect for logging before and after every method in adder -->
+        <aop:aspect id="loggingAspect" ref="loggingAspectBean">
+            <!-- NON-shared pointcut, only used by loggingAspect -->
+            <aop:pointcut id="pointCutForEveryMethod" expression="execution(* com.example.XML_demo.Adder+.*(..))" />
+
+            <aop:before method="logBeforeAdvice" pointcut-ref="pointCutForEveryMethod" />
+            <aop:after method="logAfterAdvice" pointcut-ref="pointCutForEveryMethod" />
+            <aop:after-returning method="logAfterReturnAdvice" returning="returnValue" pointcut-ref="pointCutForEveryMethod" />
+        </aop:aspect>
+
+        <!-- Aspect for input validation for set* methods -->
+        <aop:aspect id="validationAspect" ref="validationAspectBean">
+            <!-- NON-shared pointcut, only used by validationAspect -->
+            <aop:pointcut id="pointCutForSetMethods" expression="execution(* set*(..)) and args(passedInValue)" />  <!-- passedInValue is the argument when invoking set* method -->
+
+            <aop:before method="validateSetValueBeforeAdvice" arg-names="passedInValue" pointcut-ref="pointCutForSetMethods" />
+        </aop:aspect>
+
+        <!-- Other demo Aspects (performed on get* methods) -->
+        <aop:aspect id="demoAspect" ref="demoAspectBean">
+            <!-- (Note: Below pointcuts are all inline pointcut) -->
+            <!-- demo0: the following pointcut `pc0` collects the `this` object as the join point context and passes it to the advice -->
+            <aop:before method="testAdvice0" pointcut="execution(* someMethod(..)) and this(obj)" />
+            <aop:after-throwing method="testAdvice1" pointcut="execution(* throwException*(..))" throwing="ex" />
+            <aop:around method="testAdvice2" pointcut="execution(* testAroundMethod(..))" />
+        </aop:aspect>
+    </aop:config>
+</beans>
