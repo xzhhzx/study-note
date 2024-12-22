@@ -1,4 +1,4 @@
-package com.example.demo10_beanByType;
+package com.example.demo11_manualAC;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
@@ -15,4 +15,7 @@ public class MyBean {
         String res = greeting + " " + greeting;
         return res;
     }
+
+    // If injection by name is preferred, @Qualifier may be used to inject dependency BY NAME
+    // See: https://www.logicbig.com/tutorials/spring-framework/spring-core/javaconfig-methods-inter-dependency.html
 }
