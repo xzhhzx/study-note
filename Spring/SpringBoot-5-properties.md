@@ -1,4 +1,4 @@
-# Spring - categories of application properties
+# Spring/Spring Boot - properties
 
 ### Basics: categories of properties inside a Spring application
 

@@ -19,6 +19,8 @@ public ResponseEntity<String> addUser(@Valid @RequestBody User user) {
 ```
 还有其他定义入参校验的方法，如拓展为xml文件的方式。
 
+
+
 ## 常用校验约束条件
 约束条件注解定义在 `javax.validation.constraints` 包中，具体包含：
 * `@NotNull`, `@NotBlank`
@@ -32,10 +34,27 @@ public ResponseEntity<String> addUser(@Valid @RequestBody User user) {
 
 对于 Spring 应用，一般在Controller层接口方法入参的位置加上 `@Valid` 注解，在Entity类的各个属性上，根据业务逻辑加上 `@Min`,`@NotNull` 等注解。
 
+
+
+##  Comparison: `@Valid` vs. `@Validated`
+
+* `@Valid` 属于 `javax.validation` 包（一般通过 `spring-boot-starter-validation` 的 Maven依赖引入）
+* `@Validated` 属于 `org.springframework.validation.annotation` 包
+* `@Validated` 用于需要分组的情况。如对于新增API，请求需要提供用户姓名、年龄、身份证号；而对于更新API，请求只需要提供身份证号，这种情况下就需要把需要校验的字段根据不同的API接口就行分组（有的时候需要校验身份证号，而有时不用）
+
+
+
+> Ref: [Differences in @Valid and @Validated Annotations in Spring | Baeldung](https://www.baeldung.com/spring-valid-vs-validated)
+
+
+
+
 ## 校验异常处理
 当入参校验失败时，Spring默认会打印日志，但无法给调用方提供反馈信息。如果想返回更准确的信息，需要自定义额外的异常处理方法，这样就可以在校验失败时，捕获Spring抛出的 `MethodArgumentNotValidException` 异常并进行处理。示例代码中，定义在了 `GlobalExceptionHandler` 类的 `handleValidationExceptions` 方法中。关于Spring的统一异常处理，具体详见： [统一异常处理.md](./exception_handling.md))
 
-## 完整代码
+
+
+## 完整代码示例
 * Controller: `ParamValidationController`
 * Service: `ParamValidationService`
 * Unit tests: TODO

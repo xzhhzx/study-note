@@ -59,11 +59,11 @@ In below diagram, the specific implementation of each component can be:
 * Servlet -> the underlying Servlet instance taken care by Spring Boot (represented by `ApplicationContext`)
 * Bean -> objects that are created by and exists inside the Servlet's `ServletContext`
 
-<img src="./images/Servlet-Container.jpg" style="zoom:120%;" />
+<img src="../images/Servlet-Container.jpg" style="zoom:120%;" />
 
 Below shows that one Servlet Container may contain multiple Servlets.
 
-<img src="./images/Servlet-Architecture-Main.jpg" style="zoom:80%;" />
+<img src="../images/Servlet-Architecture-Main.jpg" style="zoom:80%;" />
 
 
 
