@@ -138,6 +138,30 @@ Index 9 and 10 are the property source loaded from `application-dev.properties` 
 
 
 
+### Relaxed binding
+
+***IMPORTANT NOTE***:
+
+1. For ***setting*** properties into Spring container environment, multiple forms of naming can be used, for which **relaxed-binding** means: 
+      ``` properties
+      spring.jpa.database-platform=mysql
+      spring.jpa.databasePlatform=mysql
+      spring.jpa.database_platform=mysql
+      ```
+
+
+2. For ***getting*** properties from Spring container environment, only the **uniform** naming can be used: 
+      ``` java
+      ac.getEnvironment().getProperty("spring.jpa.database-platform"); 	// Correct
+      ac.getEnvironment().getProperty("spring.jpa.databasePlatform"); 	// WRONG!
+      ac.getEnvironment().getProperty("spring.jpa.database_platform"); 	// WRONG!
+      ```
+
+
+
+
+
+
 
 
 > References:
@@ -147,3 +171,4 @@ Index 9 and 10 are the property source loaded from `application-dev.properties` 
 > * Spring Boot reference: [Externalized Configuration :: Spring Boot](https://docs.spring.io/spring-boot/reference/features/external-config.html)
 > * Spring Boot how-to guide: [Properties and Configuration :: Spring Boot](https://docs.spring.io/spring-boot/how-to/properties-and-configuration.html#howto.properties-and-configuration.discover-build-in-options-for-external-properties)
 > * Spring Boot common properties: [Common Application Properties :: Spring Boot](https://docs.spring.io/spring-boot/appendix/application-properties/index.html#appendix.application-properties.cache)
+> * Relaxed Binding: Ref: [github.com](https://github.com/spring-projects/spring-boot/wiki/Relaxed-Binding-2.0)
