@@ -139,7 +139,10 @@ public <T> T execute(RedisCallback<T> action, boolean exposeConnection, boolean 
 
 ### Redis连接池的使用
 
-Jedis 和 Lettuce 底层使用的是 apache.commons.pool2 的连接池
+Jedis 和 Lettuce 底层使用的是 apache.commons.pool2 的连接池，然而在Spring Boot 中，两者的默认配置有区别
+
+* Jedis 默认使用连接池（因为非线程安全）
+* Lettuce 默认不使用连接池（因为 Lettuce 底层使用的 Netty 用到多路复用技术，一个 Lettuce 连接就能支持并发请求）
 
 
 
