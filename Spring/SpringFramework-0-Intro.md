@@ -4,15 +4,15 @@
 
   * `Servlet` is defined as a Java EE specification (a Java-specific concept!)
 
-  * **(Informal) Definition**: Simply put, a Servlet is a class that handles requests, processes them and reply back with a response, running within a web server.
+  * **(Informal) Definition**: Simply put, a Servlet is a class that handles requests, processes them and replies back with a response, running within a web server.
 
   * **Classes & interface**: `HttpServlet` is a subclass of `GenericServlet`, an implementation of the `Servlet` interface.
 
   * **Lifecycle**: `init()`, `service()`, `destroy()`
 
-  * > **Servlet** is simply a java class that have some methods you need to implement
+  * > **Servlet** is simply a Java class that have some methods you need to implement.
     >
-    > **Servlet servers** (e.g **tomcat**, jetty) can host and abide by the applications that implemented the servlet.
+    > **Servlet servers** (e.g **Tomcat**, Jetty) can host and abide by the applications that implemented the servlet.
     >
     > So whenever a request arrives these servlet web servers, the web server passes the request to your application by calling your servlet implementation.
     >
@@ -55,8 +55,8 @@ In below diagram, the specific implementation of each component can be:
 
 * Web Server -> JVM process
 * Servlet Container -> Tomcat
-* Web App -> Spring Boot application
-* Servlet -> the underlying Servlet instance taken care by Spring Boot (represented by `ApplicationContext`)
+* Web App -> Spring application
+* Servlet -> the underlying Servlet instance taken care by Spring (represented by `ApplicationContext`?)
 * Bean -> objects that are created by and exists inside the Servlet's `ServletContext`
 
 <img src="../images/Servlet-Container.jpg" style="zoom:120%;" />
@@ -77,6 +77,10 @@ Spring 框架下有多个项目（project），包括 Spring Framework, Spring B
 > The term "Spring" means different things in different contexts. It can be used to refer to the Spring Framework project itself, which is where it all started. Over time, other Spring projects have been built on top of the Spring Framework. Most often, when people say "Spring", they mean the entire family of projects.
 >
 > *(From Spring Framework - Overview section)*
+
+(Side note: Spring framework is not limited to a "Web framework", but more widely a framework for providing a comprehensive programming and configuration model for modern Java-based enterprise application, as described in the official document. In other words, it provides features such as IoC container, DI, AOP which can be used in any Java application other than web applications.
+
+
 
 ## 1. Spring Framework
 
@@ -121,6 +125,8 @@ Spring 框架下有多个项目（project），包括 Spring Framework, Spring B
     * **Dependency**: **References** to other beans that are needed for the bean to do its work. Also called **collaborators**.
 
     * **Dependency Injection**: Dependency injection (DI) is a process whereby objects define their dependencies (that is, the other objects with which they work) only through <u>constructor arguments</u>, <u>factory method arguments</u>, or <u>properties that are set</u> on the object instance after it is constructed or returned from a factory method. The container then **injects** those dependencies when it creates the bean. This process is fundamentally the inverse (hence the name, Inversion of Control) of the bean itself controlling the instantiation or location of its dependencies on its own by using direct construction of classes or the Service Locator pattern.
+
+      > See more: [Inversion of Control Containers and the Dependency Injection pattern](https://martinfowler.com/articles/injection.html)
 
       ```XML
       <!-- Example: constructor-based. -->
@@ -249,7 +255,7 @@ Spring 框架下有多个项目（project），包括 Spring Framework, Spring B
 
 ## 3. Spring MVC
 
-没有使用SpringBoot的经典SSM (Spring+SpringMVC+MyBatis) 项目实例: https://sampig.github.io/tutorial/2019/07/24/practice-spring-ssm
+不使用SpringBoot的经典SSM (Spring+SpringMVC+MyBatis) 项目实例: https://sampig.github.io/tutorial/2019/07/24/practice-spring-ssm
 
 
 

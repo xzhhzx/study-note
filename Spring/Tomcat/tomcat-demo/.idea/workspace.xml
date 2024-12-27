@@ -5,10 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fff42865-1e83-4aac-a85f-5d84804820a2" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../../SpringBoot-11-MockMVC_details.drawio" beforeDir="false" afterPath="$PROJECT_DIR$/../../SpringBoot-11-MockMVC_details.drawio" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/TestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/TestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/DemoApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/DemoApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Take-home-questions.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../SpringBoot-11-MockMVC_details.drawio" beforeDir="false" afterPath="$PROJECT_DIR$/../../SpringBoot-11-testing-MockMVC_details.drawio" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../SpringBoot-12-HTTP-clients.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../SpringFramework-11-HTTP-clients.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../SpringFramework-0-Intro.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../SpringFramework-0-Intro.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.img/tomcat.drawio" beforeDir="false" afterPath="$PROJECT_DIR$/tomcat.drawio" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,23 +42,23 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Application.DemoApplication.executor": "Debug",
+    "Application.DemoApplication.executor": "Run",
     "Application.Main.executor": "Run",
     "Application.Main2.executor": "Debug",
     "Application.Main3.executor": "Run",
     "JUnit.DemoApplicationTests.concurrentRequestTest.executor": "Run",
     "JUnit.DemoApplicationTests.concurrentRequestsTest.executor": "Run",
-    "JUnit.DemoApplicationTests.executor": "Run",
+    "JUnit.DemoApplicationTests.executor": "Debug",
     "JUnit.DemoApplicationTests.func.executor": "Run",
     "JUnit.DemoApplicationTests.requestTest.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/User/Desktop/study-note",
+    "last_opened_file_path": "C:/Users/User/Desktop/demo-Boot3",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices"
+    "settings.editor.selected.configurable": "preferences.keymap"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -64,8 +66,10 @@
       <recent name="org.example" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.DemoApplicationTests">
+  <component name="RunManager" selected="Application.DemoApplication">
     <configuration name="DemoApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="SAPmachine-17" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="org.example.DemoApplication" />
       <module name="spring-boot-demo" />
       <extension name="coverage">
@@ -129,11 +133,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.DemoApplication" />
         <item itemvalue="JUnit.DemoApplicationTests" />
         <item itemvalue="JUnit.DemoApplicationTests.concurrentRequestsTest" />
         <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.DemoApplicationTests.requestTest" />
-        <item itemvalue="Application.DemoApplication" />
       </list>
     </recent_temporary>
   </component>

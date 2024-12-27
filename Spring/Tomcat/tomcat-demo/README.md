@@ -4,7 +4,7 @@
 
 [Common Application Properties :: Spring Boot](https://docs.spring.io/spring-boot/appendix/application-properties/index.html)
 
-(Search for `serve.tomcat`)
+(Search for `server.tomcat`)
 
 
 

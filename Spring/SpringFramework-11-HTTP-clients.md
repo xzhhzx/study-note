@@ -6,4 +6,5 @@
 
 ### Ref
 
+* https://docs.spring.io/spring-framework/reference/integration/rest-clients.html
 * [A Guide to RestClient in Spring Boot | Baeldung](https://www.baeldung.com/spring-boot-restclient)
