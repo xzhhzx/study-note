@@ -1,0 +1,103 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.7.8 Chrome/128.0.6613.36 Electron/32.0.1 Safari/537.36" version="24.7.8">
+  <diagram id="CetzEVvNPrQqHPS30Xum" name="OpenFeign demo">
+    <mxGraphModel dx="1273" dy="1457" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="wjC4OsaZiSn3oDHIjQG6-19" value="&lt;div style=&quot;background-color: rgb(255, 255, 255); color: rgb(8, 8, 8); font-size: 15px;&quot;&gt;&lt;pre style=&quot;font-family: &amp;quot;JetBrains Mono&amp;quot;, monospace;&quot;&gt;&lt;span style=&quot;color:#9e880d;&quot;&gt;@RequestMapping&lt;/span&gt;&lt;span style=&quot;color:#871094;font-style:italic;&quot;&gt;(&lt;/span&gt;&lt;span style=&quot;color:#067d17;&quot;&gt;&quot;/foo&quot;&lt;/span&gt;&lt;span style=&quot;color:#871094;font-style:italic;&quot;&gt;)&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;color:#0033b3;&quot;&gt;public &lt;/span&gt;&lt;span style=&quot;color:#000000;&quot;&gt;String &lt;/span&gt;&lt;span style=&quot;color:#00627a;&quot;&gt;foo&lt;/span&gt;&lt;span style=&quot;color:#871094;font-style:italic;&quot;&gt;() {&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;color:#871094;font-style:italic;&quot;&gt;    &lt;/span&gt;&lt;span style=&quot;color:#0033b3;&quot;&gt;return &lt;/span&gt;&lt;span style=&quot;color:#871094;&quot;&gt;feignService&lt;/span&gt;.fooFeign&lt;span style=&quot;color:#871094;font-style:italic;&quot;&gt;()&lt;/span&gt;;&lt;br&gt;&lt;span style=&quot;color:#871094;font-style:italic;&quot;&gt;}&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-20" y="110" width="260" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="LMrehkhd1_mzqCAk2MHY-5" value="Tomcat" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;" parent="1" vertex="1">
+          <mxGeometry x="260" y="90" width="360" height="390" as="geometry" />
+        </mxCell>
+        <mxCell id="LMrehkhd1_mzqCAk2MHY-2" value="&lt;b&gt;request&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="120" y="250" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="LMrehkhd1_mzqCAk2MHY-1" value="&amp;nbsp;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;Spring MVC" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;verticalAlign=top;align=left;fontStyle=2" parent="1" vertex="1">
+          <mxGeometry x="280" y="160" width="310" height="290" as="geometry" />
+        </mxCell>
+        <mxCell id="LMrehkhd1_mzqCAk2MHY-6" value="DispatcherServlet (HttpServlet)" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;" parent="1" vertex="1">
+          <mxGeometry x="304.5" y="230" width="275.5" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="LMrehkhd1_mzqCAk2MHY-3" value="response" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="115" y="295" width="70" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="LMrehkhd1_mzqCAk2MHY-11" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0;exitY=0.75;exitDx=0;exitDy=0;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" target="LMrehkhd1_mzqCAk2MHY-3" edge="1" source="qBLVawUO-C-t650Nr5v--3">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="260" y="360" as="sourcePoint" />
+            <mxPoint x="300" y="420" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="U86pM15hBIZVNhdWzzvj-1" value="&lt;div style=&quot;&quot;&gt;&lt;b style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;OpenFeign demo&lt;/font&gt;&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;(Note: this demo simpifies remote service as 127.0.0.1, in actual situation this should be replaced by a remote address. Also, using 127.0.0.1 should be avoided for FeignClient; instead it should just call a local Service for the sake of performance consideration.)&lt;/span&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="154.88" y="-60" width="560.25" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="wjC4OsaZiSn3oDHIjQG6-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="qBLVawUO-C-t650Nr5v--3" target="wjC4OsaZiSn3oDHIjQG6-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="qBLVawUO-C-t650Nr5v--3" value="TestController" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;" parent="1" vertex="1">
+          <mxGeometry x="330" y="270" width="95" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="wjC4OsaZiSn3oDHIjQG6-1" value="FeignController" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="330" y="370" width="95" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="LMrehkhd1_mzqCAk2MHY-7" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" source="LMrehkhd1_mzqCAk2MHY-2" target="qBLVawUO-C-t650Nr5v--3" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="260.3599999999999" y="286.94000000000005" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wjC4OsaZiSn3oDHIjQG6-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;curved=1;entryX=1;entryY=0.75;entryDx=0;entryDy=0;fillColor=#fff2cc;strokeColor=#d6b656;" edge="1" parent="1" source="wjC4OsaZiSn3oDHIjQG6-5" target="LMrehkhd1_mzqCAk2MHY-5">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="650" y="400" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="545" y="320" />
+              <mxPoint x="750" y="320" />
+              <mxPoint x="750" y="383" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wjC4OsaZiSn3oDHIjQG6-5" value="FeignService&lt;div&gt;(@FeignClient)&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="450" y="315" width="95" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="wjC4OsaZiSn3oDHIjQG6-10" value="&lt;b&gt;OpenFeign request&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="760" y="340" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="wjC4OsaZiSn3oDHIjQG6-13" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=1;entryY=0.75;entryDx=0;entryDy=0;fillColor=#fff2cc;strokeColor=#d6b656;" edge="1" parent="1" source="LMrehkhd1_mzqCAk2MHY-5" target="wjC4OsaZiSn3oDHIjQG6-1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="340" y="288" as="targetPoint" />
+            <mxPoint x="220" y="275" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wjC4OsaZiSn3oDHIjQG6-14" value="/foo" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="200" y="230" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="wjC4OsaZiSn3oDHIjQG6-15" value="/fooFeign" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="715.13" y="380" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="wjC4OsaZiSn3oDHIjQG6-16" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=1.002;entryY=0.714;entryDx=0;entryDy=0;entryPerimeter=0;fillColor=#dae8fc;strokeColor=#6c8ebf;" edge="1" parent="1" source="wjC4OsaZiSn3oDHIjQG6-1" target="LMrehkhd1_mzqCAk2MHY-5">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="620" y="369" as="targetPoint" />
+            <mxPoint x="630" y="393" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wjC4OsaZiSn3oDHIjQG6-18" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.998;exitY=0.712;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1;entryY=0.75;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;curved=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" edge="1" parent="1" source="LMrehkhd1_mzqCAk2MHY-5" target="wjC4OsaZiSn3oDHIjQG6-5">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="650" y="380" as="sourcePoint" />
+            <mxPoint x="700" y="330" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="660" y="368" />
+              <mxPoint x="660" y="349" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wjC4OsaZiSn3oDHIjQG6-20" value="&lt;div style=&quot;background-color: rgb(255, 255, 255); color: rgb(8, 8, 8); font-size: 15px;&quot;&gt;&lt;pre style=&quot;font-family: &amp;quot;JetBrains Mono&amp;quot;, monospace;&quot;&gt;&lt;span style=&quot;color:#9e880d;&quot;&gt;@FeignClient&lt;/span&gt;&lt;span style=&quot;color:#871094;font-style:italic;&quot;&gt;(&lt;/span&gt;name = &lt;span style=&quot;color:#067d17;&quot;&gt;&quot;DEMO&quot;&lt;/span&gt;, url = &lt;span style=&quot;color:#067d17;&quot;&gt;&quot;127.0.0.1:8080&quot;&lt;/span&gt;&lt;span style=&quot;color:#871094;font-style:italic;&quot;&gt;)&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;color:#0033b3;&quot;&gt;public interface &lt;/span&gt;&lt;span style=&quot;color:#000000;&quot;&gt;FeignService &lt;/span&gt;&lt;span style=&quot;color:#871094;font-style:italic;&quot;&gt;{&lt;/span&gt;&lt;span style=&quot;color:#871094;font-style:italic;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;color:#871094;font-style:italic;&quot;&gt;    &lt;/span&gt;&lt;span style=&quot;color:#9e880d;&quot;&gt;@RequestMapping&lt;/span&gt;&lt;span style=&quot;color:#871094;font-style:italic;&quot;&gt;(&lt;/span&gt;&lt;span style=&quot;color:#067d17;&quot;&gt;&quot;/fooFeign&quot;&lt;/span&gt;&lt;span style=&quot;color:#871094;font-style:italic;&quot;&gt;)&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;color:#871094;font-style:italic;&quot;&gt;    &lt;/span&gt;&lt;span style=&quot;color:#0033b3;&quot;&gt;public &lt;/span&gt;&lt;span style=&quot;color:#000000;&quot;&gt;String &lt;/span&gt;&lt;span style=&quot;color:#00627a;&quot;&gt;fooFeign&lt;/span&gt;&lt;span style=&quot;color:#871094;font-style:italic;&quot;&gt;()&lt;/span&gt;;&lt;br&gt;&lt;span style=&quot;color:#871094;font-style:italic;&quot;&gt;}&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="630" y="180" width="390" height="130" as="geometry" />
+        </mxCell>
+        <UserObject label="&lt;div style=&quot;background-color: rgb(255, 255, 255); color: rgb(8, 8, 8); font-size: 15px;&quot;&gt;&lt;pre style=&quot;font-family: &amp;quot;JetBrains Mono&amp;quot;, monospace;&quot;&gt;&lt;span style=&quot;color:#9e880d;&quot;&gt;@RequestMapping&lt;/span&gt;&lt;span style=&quot;color:#871094;font-style:italic;&quot;&gt;(&lt;/span&gt;&lt;span style=&quot;color:#067d17;&quot;&gt;&quot;/fooFeign&quot;&lt;/span&gt;&lt;span style=&quot;color:#871094;font-style:italic;&quot;&gt;)&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;color:#0033b3;&quot;&gt;public &lt;/span&gt;&lt;span style=&quot;color:#000000;&quot;&gt;String &lt;/span&gt;&lt;span style=&quot;color:#00627a;&quot;&gt;fooFeign&lt;/span&gt;&lt;span style=&quot;color:#871094;font-style:italic;&quot;&gt;() &lt;/span&gt;&lt;span style=&quot;color:#871094;font-style:italic;&quot;&gt;{&lt;/span&gt;&lt;span style=&quot;color:#8c8c8c;font-style:italic;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;color:#8c8c8c;font-style:italic;&quot;&gt;    &lt;/span&gt;&lt;span style=&quot;color:#0033b3;&quot;&gt;return &lt;/span&gt;&lt;span style=&quot;color:#067d17;&quot;&gt;&quot;42&quot;&lt;/span&gt;;&lt;br&gt;&lt;span style=&quot;color:#871094;font-style:italic;&quot;&gt;}&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;" link="&lt;div style=&quot;background-color:#ffffff;color:#080808&quot;&gt;&lt;pre style=&quot;font-family:&#39;JetBrains Mono&#39;,monospace;font-size:12.0pt;&quot;&gt;&lt;span style=&quot;color:#9e880d;&quot;&gt;@RequestMapping&lt;/span&gt;&lt;span style=&quot;color:#871094;font-style:italic;&quot;&gt;(&lt;/span&gt;&lt;span style=&quot;color:#067d17;&quot;&gt;&quot;/fooFeign&quot;&lt;/span&gt;&lt;span style=&quot;color:#871094;font-style:italic;&quot;&gt;)&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;color:#871094;font-style:italic;&quot;&gt;    &lt;/span&gt;&lt;span style=&quot;color:#0033b3;&quot;&gt;public &lt;/span&gt;&lt;span style=&quot;color:#000000;&quot;&gt;String &lt;/span&gt;&lt;span style=&quot;color:#00627a;&quot;&gt;fooFeign&lt;/span&gt;&lt;span style=&quot;color:#871094;font-style:italic;&quot;&gt;() &lt;/span&gt;&lt;span style=&quot;color:#0033b3;&quot;&gt;throws &lt;/span&gt;&lt;span style=&quot;color:#000000;&quot;&gt;InterruptedException &lt;/span&gt;&lt;span style=&quot;color:#871094;font-style:italic;&quot;&gt;{&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;color:#8c8c8c;font-style:italic;&quot;&gt;//        for (int i=0; i&amp;lt;10; i++) {&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;color:#8c8c8c;font-style:italic;&quot;&gt;//            Thread.sleep(1000);&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;color:#8c8c8c;font-style:italic;&quot;&gt;//            log.info(String.valueOf(i));&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;color:#8c8c8c;font-style:italic;&quot;&gt;//        }&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;color:#8c8c8c;font-style:italic;&quot;&gt;        &lt;/span&gt;&lt;span style=&quot;color:#0033b3;&quot;&gt;return &lt;/span&gt;&lt;span style=&quot;color:#067d17;&quot;&gt;&quot;foo_feign&quot;&lt;/span&gt;;&lt;br&gt;    &lt;span style=&quot;color:#871094;font-style:italic;&quot;&gt;}&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;" id="wjC4OsaZiSn3oDHIjQG6-21">
+          <mxCell style="text;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+            <mxGeometry y="370" width="230" height="90" as="geometry" />
+          </mxCell>
+        </UserObject>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
