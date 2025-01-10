@@ -18,7 +18,7 @@
    * `ThreadLocal` is what the developer use directly. `ThreadLocalMap` cannot be accessed by developer.
    * `ThreadLocal` is the *logical* interface ("frontend"). `ThreadLocalMap` is the actual *physical* storage ("backend")
 
-<img src="../images/threadLocal.png" style="zoom:60%;" />
+<img src="../../images/threadLocal.png" style="zoom:60%;" />
 
 Simply put, `ThreadLocal` is only an access point for the developer and only stores some "meta-data" (like the name of this variable). The actual data is stored inside each thread.
 
@@ -59,7 +59,7 @@ The picture below demonstrates the reason. Notice that the object `ThreadLocal` 
 1. The ***strong*** reference itself (`var_0`)
 2. The ***weak*** reference (`Entry` key)
 
-<img src="../images/threadLocal_1.png" style="zoom:50%;" />
+<img src="../../images/threadLocal_1.png" style="zoom:50%;" />
 
 Suppose that the key of `Entry` is also a strong reference. Then if `var_0` is set to `null`, the `ThreadLocal` object is still not ready for GC, since another strong reference still holds the object and prevents it from GC. **Memory leak happens :(**
 
@@ -77,11 +77,11 @@ But the key of `Entry` is a weak reference. Therefore when `var_0 = null`, the `
 
 `ThreadLocal` object being set to null:
 
-<img src="../images/threadLocal_2.png" style="zoom:50%;" />
+<img src="../../images/threadLocal_2.png" style="zoom:50%;" />
 
 After garbage collection:
 
-<img src="../images/threadLocal_3.png" style="zoom:50%;" />
+<img src="../../images/threadLocal_3.png" style="zoom:50%;" />
 
 
 
@@ -180,6 +180,6 @@ Process finished with exit code 0
 
 
 >  * [ThreadLocal的Entry为什么要继承WeakReference? - 知乎 (zhihu.com)](https://www.zhihu.com/question/458432418)
->  <img src="../images/threadLocal_4.png" style="zoom:40%;" />
+>  <img src="../../images/threadLocal_4.png" style="zoom:40%;" />
 >  *  [cnblogs.com](https://www.cnblogs.com/lingyejun/p/13380348.html)
 >  * [zhihu.com](https://zhuanlan.zhihu.com/p/102744180)

@@ -77,7 +77,7 @@
 >
 > Ref: https://zhuanlan.zhihu.com/p/71156910
 
-<img src="../images/lock_0.png" style="zoom:60%;" />
+<img src="../../images/lock_0.png" style="zoom:60%;" />
 
 对于最开始说的三个线程安全的性质，Java中的“锁”都保证了这三个特性；而像 `volatile` 关键字就只能保证可见性和有序性
 

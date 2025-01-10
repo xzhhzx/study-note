@@ -1,6 +1,6 @@
 # `java.util.concurrent` 包概述
 
-对于java并发相关的工具而言，无非两大类：
+对于Java并发相关的工具而言，无非两大类：
 
 1. 如何**执行**多线程任务（`Executor`, `ThreadPoolExecutor`, `Future`, ...）
 2. 如何实现多线程任务之间的**同步**（`CountDownLatch`, `CyclicBarrier`, ...）
@@ -123,7 +123,7 @@ public static void main(String[] args) {
 
 ### Executor 的继承树
 
-<img src="../images/executors_0.png" style="zoom:70%;" />
+<img src="../../images/executors_0.png" style="zoom:70%;" />
 
 > The `Executor` implementations provided in this package implement [`ExecutorService`](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ExecutorService.html), which is a more extensive interface. The [`ThreadPoolExecutor`](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ThreadPoolExecutor.html) class provides an extensible thread pool implementation. The [`Executors`](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/Executors.html) class provides convenient factory methods for these Executors.
 
@@ -193,7 +193,7 @@ public static void main(String[] args) {
 
 > A synchronization aid that allows a set of threads to all wait for each other to reach a common barrier point. `CyclicBarriers` are useful in programs involving a fixed sized party of threads that must occasionally wait for each other. The barrier is called ***cyclic*** because it can be re-used after the waiting threads are released.
 
-<img src="../images/cyclic_barrier.png" style="zoom:60%;" />
+<img src="../../images/cyclic_barrier.png" style="zoom:60%;" />
 
 ```java
 public class CyclicBarrierTest {

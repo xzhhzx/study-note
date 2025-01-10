@@ -20,7 +20,7 @@
 
 #### 线程锁 vs. 进程锁 vs. 分布式锁
 
-<img src="../images/distribute_lock_3.png" style="zoom:40%;" />
+<img src="../../images/distribute_lock_3.png" style="zoom:40%;" />
 
 
 
@@ -28,7 +28,7 @@
 
 两台服务器同时访问数据库中的相同一行（即前文所述的共享资源），并做修改：
 
-<img src="../images/distribute_lock_5.png" style="zoom:70%;" />
+<img src="../../images/distribute_lock_5.png" style="zoom:70%;" />
 
 
 
@@ -90,7 +90,7 @@ if (res) {
 
 ​	结果如下：
 
-<img src="../images/distribute_lock_4.png" style="zoom:100%;" />
+<img src="../../images/distribute_lock_4.png" style="zoom:100%;" />
 
 
 
