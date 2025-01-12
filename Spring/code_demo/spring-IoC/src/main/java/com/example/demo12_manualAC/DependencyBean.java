@@ -1,4 +1,4 @@
-package com.example.demo11_manualAC;
+package com.example.demo12_manualAC;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

@@ -1,4 +1,4 @@
-package com.example.demo10_beanInjectByType;
+package com.example.demo12_manualAC;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;

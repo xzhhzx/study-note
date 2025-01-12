@@ -1,4 +1,4 @@
-package com.example.demo10_beanInjectByType;
+package com.example.demo11_beanInjectByType;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

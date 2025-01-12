@@ -1,13 +1,14 @@
-package com.example.demo11_manualAC;
+package com.example.demo12_manualAC;
 
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.core.env.StandardEnvironment;
 
-public class Demo10Application {
+public class Demo12Application {
     public static void main(String[] args) {
-        ApplicationContext ac = new AnnotationConfigApplicationContext("com.example.demo10_beanInjectByType");
+        String currentPackage = Demo12Application.class.getPackage().getName();
+        ApplicationContext context = new AnnotationConfigApplicationContext(currentPackage);
+
 
         // When is @PropertySource loaded?
 //        ac.getEnvironment()
