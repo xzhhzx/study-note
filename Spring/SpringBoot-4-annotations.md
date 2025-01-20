@@ -1,3 +1,49 @@
+# Spring 常用注解及对比
+
+### `@Autowired`
+
+根据源码，可以用于五个地方：
+
+1. `@Target(ElementType.CONSTRUCTOR)`  -> 构造器注入 *（可省略）*
+
+2. `@Target(ElementType.METHOD)` -> setter注入
+
+3. `@Target(ElementType.PARAMETER)` -> 字段注入
+
+4. `@Target(ElementType.FIELD)` *（可省略）*
+
+    ```java
+    @Bean
+    public String ans(@Autowired int num) {
+        return String.valueOf(num);
+    }
+    ```
+
+5. `@Target(ElementType.ANNOTATION_TYPE)`
+
+
+
+### `@Autowired`/`@Resource`/`@Inject`
+
+> Ref: [Wiring in Spring: @Autowired, @Resource and @Inject | Baeldung](https://www.baeldung.com/spring-annotations-resource-inject-autowire)
+
+When to use what?
+
+|                           Scenario                           | @Resource | @Inject | @Autowired |
+| :----------------------------------------------------------: | :-------: | :-----: | :--------: |
+| Application-wide use of singletons through polymorphism (inject by interface or an abstract class type) |    :x:    |    ✔    |     ✔      |
+| Fine-grained application behavior configuration through polymorphism (inject by concrete class type) |     ✔     |   :x:   |    :x:     |
+| Dependency injection should be handled solely by the Jakarta EE platform |     ✔     |    ✔    |    :x:     |
+| Dependency injection should be handled solely by the Spring Framework |    :x:    |   :x:   |     ✔      |
+
+
+
+### `@Import` vs. `@ComponentScan`
+
+In the context of Spring Boot (convention-over-configuration), `@ComponentScan` is more like convention, while `@Import` looks like configuration.
+
+
+
 ### `@ConfigurationProperties` 和 `@EnableConfigurationProperties`
 
 其实很简单，`@ConfigurationProperties` 相当于是 `@Value` 注解的合集版，用来封装`application.properties` 中的外部配置（external configuration），类似一个POJO类。

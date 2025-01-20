@@ -1,9 +1,117 @@
 <mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.7.8 Chrome/128.0.6613.36 Electron/32.0.1 Safari/537.36" version="24.7.8" pages="3">
-  <diagram id="4FC6IdAlJIGc5MopECfV" name="Overview">
-    <mxGraphModel dx="794" dy="519" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+  <diagram id="4FC6IdAlJIGc5MopECfV" name="JVM Overview">
+    <mxGraphModel dx="993" dy="649" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="XUZfGu4mc8AsiPVswBJO-29" value="&lt;b&gt;&lt;i&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;JVM (process)&lt;/font&gt;&lt;/i&gt;&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;horizontal=1;verticalAlign=top;fillColor=#FFF9E6;strokeColor=#d6b656;" parent="1" vertex="1">
+          <mxGeometry x="170" y="50" width="990" height="630" as="geometry" />
+        </mxCell>
+        <mxCell id="7GlHONAwSmgjb8eBpykU-1" value="&lt;b&gt;&lt;i&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;Thread-0&lt;/font&gt;&lt;/i&gt;&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;horizontal=1;verticalAlign=top;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" parent="1" vertex="1">
+          <mxGeometry x="230" y="110" width="400" height="540" as="geometry" />
+        </mxCell>
+        <mxCell id="7GlHONAwSmgjb8eBpykU-2" value="Stack" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+          <mxGeometry x="260" y="170" width="180" height="450" as="geometry" />
+        </mxCell>
+        <mxCell id="XUZfGu4mc8AsiPVswBJO-6" value="" style="group;fillColor=#d5e8d4;strokeColor=none;" parent="1" vertex="1" connectable="0">
+          <mxGeometry x="280" y="210" width="140" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="XUZfGu4mc8AsiPVswBJO-1" value="F&lt;span style=&quot;background-color: initial;&quot;&gt;rame-&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;myMethod()&lt;/span&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;fillColor=#AEBBFC;strokeColor=#6c8ebf;" parent="XUZfGu4mc8AsiPVswBJO-6" vertex="1">
+          <mxGeometry width="140" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="XUZfGu4mc8AsiPVswBJO-2" value="Local Variable array" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="XUZfGu4mc8AsiPVswBJO-6" vertex="1">
+          <mxGeometry x="10" y="40" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="XUZfGu4mc8AsiPVswBJO-3" value="Operand Stack" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="XUZfGu4mc8AsiPVswBJO-6" vertex="1">
+          <mxGeometry x="10" y="70" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="XUZfGu4mc8AsiPVswBJO-4" value="Dynamic Linking" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="XUZfGu4mc8AsiPVswBJO-6" vertex="1">
+          <mxGeometry x="10" y="100" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="XUZfGu4mc8AsiPVswBJO-5" value="Method Invocation Completion" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="XUZfGu4mc8AsiPVswBJO-6" vertex="1">
+          <mxGeometry x="10" y="130" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="XUZfGu4mc8AsiPVswBJO-7" value="&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;&quot;&gt;A new frame is created each time a method is invoked.&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-family: Arial, Helvetica, sans-serif; background-color: rgb(255, 255, 255);&quot;&gt;Only one frame, the frame for the executing method, is active at any point in a given thread of control. This frame is referred to as the&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-family: Arial, Helvetica, sans-serif; background-color: rgb(255, 255, 255);&quot; class=&quot;emphasis&quot;&gt;&lt;em&gt;current frame&lt;/em&gt;&lt;/span&gt;&lt;span style=&quot;font-family: Arial, Helvetica, sans-serif; background-color: rgb(255, 255, 255);&quot;&gt;, and its method is known as the&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-family: Arial, Helvetica, sans-serif; background-color: rgb(255, 255, 255);&quot; class=&quot;emphasis&quot;&gt;&lt;em&gt;current method&lt;/em&gt;&lt;/span&gt;&lt;span style=&quot;font-family: Arial, Helvetica, sans-serif; background-color: rgb(255, 255, 255);&quot;&gt;.&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="260" y="690" width="350" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="XUZfGu4mc8AsiPVswBJO-18" value="" style="group;fillColor=#d5e8d4;strokeColor=none;" parent="1" vertex="1" connectable="0">
+          <mxGeometry x="280" y="420" width="140" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="XUZfGu4mc8AsiPVswBJO-19" value="F&lt;span style=&quot;background-color: initial;&quot;&gt;rame-&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;main()&lt;/span&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;fillColor=#AEBBFC;strokeColor=#6c8ebf;" parent="XUZfGu4mc8AsiPVswBJO-18" vertex="1">
+          <mxGeometry width="140" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="XUZfGu4mc8AsiPVswBJO-20" value="Local Variable array" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="XUZfGu4mc8AsiPVswBJO-18" vertex="1">
+          <mxGeometry x="10" y="40" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="XUZfGu4mc8AsiPVswBJO-21" value="Operand Stack" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="XUZfGu4mc8AsiPVswBJO-18" vertex="1">
+          <mxGeometry x="10" y="70" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="XUZfGu4mc8AsiPVswBJO-22" value="Dynamic Linking" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="XUZfGu4mc8AsiPVswBJO-18" vertex="1">
+          <mxGeometry x="10" y="100" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="XUZfGu4mc8AsiPVswBJO-23" value="Method Invocation Completion" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="XUZfGu4mc8AsiPVswBJO-18" vertex="1">
+          <mxGeometry x="10" y="130" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="XUZfGu4mc8AsiPVswBJO-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;curved=1;" parent="1" source="XUZfGu4mc8AsiPVswBJO-5" target="XUZfGu4mc8AsiPVswBJO-19" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="XUZfGu4mc8AsiPVswBJO-26" value="pc Register" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+          <mxGeometry x="465" y="170" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="XUZfGu4mc8AsiPVswBJO-28" value="Native Method Stack" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+          <mxGeometry x="465" y="300" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="Lv2ZZq-vD2op38_eneU4-1" value="&lt;b&gt;&lt;i&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;Thread-1&lt;/font&gt;&lt;/i&gt;&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;horizontal=1;verticalAlign=top;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="710" y="110" width="400" height="540" as="geometry" />
+        </mxCell>
+        <mxCell id="Lv2ZZq-vD2op38_eneU4-2" value="Stack" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="740" y="170" width="180" height="450" as="geometry" />
+        </mxCell>
+        <mxCell id="Lv2ZZq-vD2op38_eneU4-3" value="" style="group;fillColor=#d5e8d4;strokeColor=none;" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="760" y="210" width="140" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="Lv2ZZq-vD2op38_eneU4-4" value="F&lt;span style=&quot;background-color: initial;&quot;&gt;rame-&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;myMethod()&lt;/span&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;fillColor=#AEBBFC;strokeColor=#6c8ebf;" vertex="1" parent="Lv2ZZq-vD2op38_eneU4-3">
+          <mxGeometry width="140" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="Lv2ZZq-vD2op38_eneU4-5" value="Local Variable array" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="Lv2ZZq-vD2op38_eneU4-3">
+          <mxGeometry x="10" y="40" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Lv2ZZq-vD2op38_eneU4-6" value="Operand Stack" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="Lv2ZZq-vD2op38_eneU4-3">
+          <mxGeometry x="10" y="70" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Lv2ZZq-vD2op38_eneU4-7" value="Dynamic Linking" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="Lv2ZZq-vD2op38_eneU4-3">
+          <mxGeometry x="10" y="100" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Lv2ZZq-vD2op38_eneU4-8" value="Method Invocation Completion" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="Lv2ZZq-vD2op38_eneU4-3">
+          <mxGeometry x="10" y="130" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Lv2ZZq-vD2op38_eneU4-9" value="" style="group;fillColor=#d5e8d4;strokeColor=none;" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="760" y="420" width="140" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="Lv2ZZq-vD2op38_eneU4-10" value="F&lt;span style=&quot;background-color: initial;&quot;&gt;rame-&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;main()&lt;/span&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;fillColor=#AEBBFC;strokeColor=#6c8ebf;" vertex="1" parent="Lv2ZZq-vD2op38_eneU4-9">
+          <mxGeometry width="140" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="Lv2ZZq-vD2op38_eneU4-11" value="Local Variable array" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="Lv2ZZq-vD2op38_eneU4-9">
+          <mxGeometry x="10" y="40" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Lv2ZZq-vD2op38_eneU4-12" value="Operand Stack" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="Lv2ZZq-vD2op38_eneU4-9">
+          <mxGeometry x="10" y="70" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Lv2ZZq-vD2op38_eneU4-13" value="Dynamic Linking" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="Lv2ZZq-vD2op38_eneU4-9">
+          <mxGeometry x="10" y="100" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Lv2ZZq-vD2op38_eneU4-14" value="Method Invocation Completion" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="Lv2ZZq-vD2op38_eneU4-9">
+          <mxGeometry x="10" y="130" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Lv2ZZq-vD2op38_eneU4-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;curved=1;" edge="1" parent="1" source="Lv2ZZq-vD2op38_eneU4-8" target="Lv2ZZq-vD2op38_eneU4-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Lv2ZZq-vD2op38_eneU4-16" value="pc Register" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="945" y="170" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="Lv2ZZq-vD2op38_eneU4-17" value="Native Method Stack" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="945" y="300" width="140" height="70" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
