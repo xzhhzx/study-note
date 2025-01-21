@@ -23,6 +23,8 @@
 
 3. Introduced automatic garbage collection
 
+4. Java 8之后方法区使用的是堆外内存
+
 
 
 
