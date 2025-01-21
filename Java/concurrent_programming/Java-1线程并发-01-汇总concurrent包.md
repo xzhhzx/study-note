@@ -3,7 +3,7 @@
 对于Java并发相关的工具而言，无非两大类：
 
 1. 如何**执行**多线程任务（`Executor`, `ThreadPoolExecutor`, `Future`, ...）
-2. 如何实现多线程任务之间的**同步**（`CountDownLatch`, `CyclicBarrier`, ...）
+2. 如何保证多线程安全，实现多线程任务之间的**同步**（`CountDownLatch`, `CyclicBarrier`, ...）
 
 这是 `java.util.concurrent` 包中提供的两大功能。除此之外，该包也提供了现成的**线程安全集合类**（如 `ConcurrentHashMap` 等）。以上三点共同组成了 `java.util.concurrent` 包。
 
@@ -23,10 +23,11 @@
 
 
 
-具体的实现是多样化且可高度自定义的，可以是同步或异步的，也可以使用单一线程或使用线程池。比如下面就是一个简单的**同步** Executor，在主线程中直接阻塞式运行，不会创建新的线程：
+具体的实现是多样化且可高度自定义的，可以是同步或异步的，也可以使用单一线程或使用线程池。比如下面就是一个简单自定义的**同步** Executor，在主线程中直接阻塞式运行，不会创建新的线程：
 
 ```java
 class SimpleSyncExecutor implements Executor {
+    @Override
     public void execute(Runnable r) {
         r.run();
     }
@@ -43,6 +44,7 @@ executor.execute(() -> System.out.println("Executing task...."));
 
 ```java
 class ThreadPerTaskExecutor implements Executor {
+    @Override
     public void execute(Runnable r) {
         new Thread(r).start();
     }
@@ -63,6 +65,7 @@ class SerialProxyExecutor implements Executor {
         this.executor = executor;
     }
 
+    @Override
     public synchronized void execute(final Runnable r) {
         // 放入队列
         tasks.offer(new Runnable() {
@@ -91,7 +94,7 @@ class SerialProxyExecutor implements Executor {
 
 
 
-以下是第三个例子的测试。按照这个逻辑，`SerialProxyExecutor` 会立刻把3个任务包装好后放入自己的队列里，然后立即返回执行后续main方法里的逻辑。而队列中的任务会串行执行，执行每一个任务后会自动再调用下一个任务。
+以下是第三个例子的测试。按照这个逻辑，`SerialProxyExecutor` 会立刻把3个任务包装好后放入自己的队列里，然后立即返回执行后续main方法里的逻辑。而队列中的任务会**串行**执行，执行每一个任务后会自动再调用下一个任务。
 
 ```java
 // example 3 test
@@ -228,6 +231,20 @@ public class CyclicBarrierTest {
     }
 }
 ```
+
+
+
+#### `CyclicBarrier` vs. `CountDownLatch`:
+
+* `CountDownLatch` 不可以重新使用
+
+* `CyclicBarrier` 可以重新使用
+
+* 一个形象的类比：`CountDownLatch`/`CyclicBarrier` are similar to knocking on a closed door for *n* times, and then the door opens, everyone can go through. As for `CyclicBarrier`, the door can be closed again (reuse), while `CountDownLatch` can't.
+
+  
+
+
 
 ### `Semaphore`
 
