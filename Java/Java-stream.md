@@ -35,6 +35,27 @@
 
 
 
+### Source
+
+Example: Generating a List of 5 elements of String type
+
+```java
+// M1: generate()
+List<String> res = Stream
+        .generate(() -> "haha")
+        .limit(5)
+        .collect(Collectors.toList());
+
+// M2: IntStream.range()
+List<String> res2 = IntStream.range(0, 5)
+        .mapToObj(i -> "haha")
+        .collect(Collectors.toList());
+```
+
+
+
+
+
 ### Reduction (terminal operations)
 
 *Reduction operations* (also called a ***fold***) is equivalent to terminal operations. It takes a sequence of input elements and combines them into a single summary result by repeated application of a combining operation. There are 2 kinds of general reduction operations:
@@ -101,7 +122,7 @@ Integer totalAge = people.stream()
                     );
 ```
 
-> Here, the *identity* element is both an initial seed value for the reduction and a default result if there are no input elements. The *accumulator* function takes a partial result and the next element, and produces a new partial result. The *combiner* function combines two partial results to produce a new partial result. (The combiner is necessary in parallel reductions, where the input is partitioned, a partial accumulation computed for each partition, and then the partial results are combined to produce a final result.)
+> Here, the *identity* element is both an initial seed value for the reduction and a default result if there are no input elements. The *accumulator* function takes a partial result and the next element, and produces a new partial result. The *combiner* function combines two partial results to produce a new partial result. (The combiner is necessary in parallel reductions, where the input is partitioned, a partial accumulation computed for each parallel partition, and then the partial results are combined to produce a final result.)
 
 
 

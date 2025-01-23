@@ -63,7 +63,7 @@ The picture below demonstrates the reason. Notice that the object `ThreadLocal` 
 
 Suppose that the key of `Entry` is also a strong reference. Then if `var_0` is set to `null`, the `ThreadLocal` object is still not ready for GC, since another strong reference still holds the object and prevents it from GC. **Memory leak happens :(**
 
-> **Ref**: 但是对于`ThreadLocal`来说，即使我们使用结束，也会因为线程本身存在该对象的引用，处于对象可达状态，垃圾回收器无法回收。这个时候当`ThreadLocal`太多的时候就会出现内存泄漏的问题。(*source: [ThreadLocal的Entry为什么要继承WeakReference? - 知乎 (zhihu.com)](https://www.zhihu.com/question/458432418)*)
+> **Ref**: 对于`ThreadLocal`来说，即使我们使用结束，也会因为线程本身存在该对象的引用，处于对象可达状态，垃圾回收器无法回收。这个时候就会出现内存泄漏的问题。(*source: [ThreadLocal的Entry为什么要继承WeakReference? - 知乎 (zhihu.com)](https://www.zhihu.com/question/458432418)*)
 >
 > 
 >
@@ -173,6 +173,19 @@ In thread: Thread-1 var_2: 1.01
 
 Process finished with exit code 0
 ```
+
+（`ThreadLocal` 源码注释里给出的例子也不错）
+
+
+
+### 应用实战 & 注意事项
+
+`ThreadLocal` 很常用，如存储Web请求级别的信息上下文。追踪框架 MDC (Mapped Diagnostic Context) 的底层实现就是使用了 `ThreadLocal`。
+
+在自己使用 `ThreadLocal` 时，需要注意两点：
+
+1. 及时清理，防止内存泄漏（一般情况下无需手动清理，但是以防万一最好在每次使用完后清理掉当前线程的数据）
+2. 在使用线程池的时候，**必须**及时清理（否则复用的线程会使用旧的ThreadLocal数据）
 
 
 
