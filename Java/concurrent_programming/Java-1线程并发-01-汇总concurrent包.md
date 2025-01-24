@@ -186,6 +186,14 @@ public static void main(String[] args) {
 
 多线程锁是由一个独立的子包 `java.util.concurrent.locks` 提供。
 
+* `ReentrantLock`（提问：和 `synchronized` 的区别是什么？）
+
+
+
+### atomic 包
+
+子包 `java.util.concurrent.atomic` 
+
 
 
 ### `CountDownLatch`
@@ -242,15 +250,13 @@ public class CyclicBarrierTest {
 
 * 一个形象的类比：`CountDownLatch`/`CyclicBarrier` are similar to knocking on a closed door for *n* times, and then the door opens, everyone can go through. As for `CyclicBarrier`, the door can be closed again (reuse), while `CountDownLatch` can't.
 
-  
-
 
 
 ### `Semaphore`
 
 
 
-### `BlockingQueue`
+### 
 
 
 
@@ -277,3 +283,7 @@ public class CyclicBarrierTest {
   * `Vector`
   * `Collections.synchronizedList` (其实就是给 `List` 加了一层 `synchronized` 代码块)
   * Ref: https://blog.csdn.net/weixin_45668482/article/details/117396603
+
+
+
+### `BlockingQueue`

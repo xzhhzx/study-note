@@ -70,6 +70,20 @@
 
 
 
+### Compare And Swap (CAS)
+
+CAS 是 CPU 的一个原子性指令。
+
+
+
+#### CAS 的问题
+
+1. ABA 问题
+2. 循环时间长开销大
+3. 只能保证一个共享变量的原子操作
+
+> Ref: [CAS 详解 | JavaGuide](https://javaguide.cn/java/concurrent/cas.html#java-中-cas-是如何实现的)
+
 ### Java 中保护线程安全的常见方法（重要）
 
 1. synchronized 关键字

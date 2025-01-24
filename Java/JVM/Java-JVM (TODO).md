@@ -2,6 +2,10 @@
 
 ### JVM
 
+> 学习 JVM 首先要注意一个易混淆的区别点：**JVM规范**和 **JVM的具体实现（如Hotspot）**
+
+
+
 * JIT
 * JVM memory model (五个区)
 * metaSpace, ...
