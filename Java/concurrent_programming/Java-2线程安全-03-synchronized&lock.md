@@ -71,9 +71,9 @@
 
 (TODO)
 
-`ReentrantLock` vs. `synchronized`: [微信公众平台](https://mp.weixin.qq.com/s/T2YEQILZTaqaDtmTwMdmZg)
+`ReentrantLock` vs. `synchronized`: [面试官：说说 synchronized 和 ReentrantLock 的区别](https://mp.weixin.qq.com/s/T2YEQILZTaqaDtmTwMdmZg)
 
-
+<img src="../../images/synchronized_vs_lock.png" style="zoom:50%;" />
 
 
 

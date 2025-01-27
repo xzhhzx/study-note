@@ -85,6 +85,7 @@ RLock rLock = redissonClient.getLock("lock-0");
 lock.lock();
 
 // M2: or acquire lock and automatically unlock it after 10 seconds
+// 注：开发规范往往规定必须给分布式锁配置过期时间，因为分布式锁和内存中的锁(如线程锁)不一样，需要考虑到一个分布式节点突然夯机的情况，这是如果不进行过期释放锁，则会一直占用着锁资源
 lock.lock(10, TimeUnit.SECONDS);
 
 // M3: or wait for lock aquisition up to 100 seconds 
