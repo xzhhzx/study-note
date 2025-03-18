@@ -1,0 +1,42 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.7.8 Chrome/128.0.6613.36 Electron/32.0.1 Safari/537.36" version="24.7.8">
+  <diagram name="第 1 页" id="qjwW_KonaDnB5KHRUpiS">
+    <mxGraphModel dx="862" dy="433" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="NZZ5MwD7bO2x-_U8o3F4-3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="NZZ5MwD7bO2x-_U8o3F4-1" target="NZZ5MwD7bO2x-_U8o3F4-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="NZZ5MwD7bO2x-_U8o3F4-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="NZZ5MwD7bO2x-_U8o3F4-1" target="NZZ5MwD7bO2x-_U8o3F4-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="NZZ5MwD7bO2x-_U8o3F4-1" value="&lt;b&gt;Step 1&lt;/b&gt;:&lt;br&gt;Call API endpoint (&lt;i&gt;self-programmed&lt;/i&gt;) to update environment property" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="100" y="290" width="150" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="NZZ5MwD7bO2x-_U8o3F4-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="NZZ5MwD7bO2x-_U8o3F4-2" target="NZZ5MwD7bO2x-_U8o3F4-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="NZZ5MwD7bO2x-_U8o3F4-2" value="&lt;b&gt;Step 2&lt;/b&gt;:&lt;br&gt;Call /actuator/refresh (&lt;i&gt;provided by Spring Actutor&lt;/i&gt;) to refresh Spring container" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="400" y="230" width="150" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="NZZ5MwD7bO2x-_U8o3F4-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="NZZ5MwD7bO2x-_U8o3F4-4" target="NZZ5MwD7bO2x-_U8o3F4-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="NZZ5MwD7bO2x-_U8o3F4-4" value="&lt;b&gt;Step 2&lt;/b&gt;:&lt;br&gt;Call API endpoint (&lt;i&gt;self-programmed&lt;/i&gt;) to refresh Spring container" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="400" y="360" width="150" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="NZZ5MwD7bO2x-_U8o3F4-6" value="&lt;b&gt;Step 3&lt;/b&gt;:&lt;br&gt;Call API endpoint (&lt;i&gt;self-programmed&lt;/i&gt;) to get updated environment property" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="620" y="290" width="170" height="90" as="geometry" />
+        </mxCell>
+        <UserObject label="# Step 0&#xa;$ curl &quot;http://localhost:8080/properties/customProperty&quot;&#xa;defaultValue&#xa;&#xa;# Step 1&#xa;$ curl -X POST &quot;http://localhost:8080/properties/update?key=my.custom.property&amp;value=baeldungValue&quot;&#xa;Property updated. Remember to call the actuator /actuator/refresh&#xa;&#xa;# Step 2&#xa;$ curl -X POST http://localhost:8080/actuator/refresh -H &quot;Content-Type: application/json&quot;&#xa;[]&#xa;&#xa;# Step 3&#xa;$ curl &quot;http://localhost:8080/properties/customProperty&quot;&#xa;baeldungValue" link="$ curl &quot;http://localhost:8080/properties/customProperty&quot;&#xa;defaultValue&#xa;&#xa;&#xa;$ curl -X POST &quot;http://localhost:8080/properties/update?key=my.custom.property&amp;value=baeldungValue&quot;&#xa;Property updated. Remember to call the actuator /actuator/refresh&#xa;&#xa;&#xa;$ curl -X POST http://localhost:8080/actuator/refresh -H &quot;Content-Type: application/json&quot;&#xa;[]&#xa;&#xa;&#xa;$ curl &quot;http://localhost:8080/properties/customProperty&quot;&#xa;baeldungValue" id="NZZ5MwD7bO2x-_U8o3F4-7">
+          <mxCell style="text;whiteSpace=wrap;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+            <mxGeometry x="230" y="490" width="490" height="240" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="NZZ5MwD7bO2x-_U8o3F4-10" value="2 methods" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="260" y="310" width="60" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
