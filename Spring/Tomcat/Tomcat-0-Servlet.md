@@ -58,7 +58,7 @@ HttpServlet 是 Servlet 的抽象实现类
 
 ### DispatcherServlet
 
-DispatcherServlet 进一步继承了 HttpServlet（是 HttpServlet 的实现类）
+在Spring框架中，DispatcherServlet 进一步继承了 HttpServlet（是 HttpServlet 的实现类）
 
 
 

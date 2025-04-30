@@ -5,18 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fff42865-1e83-4aac-a85f-5d84804820a2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../Tomcat-0-Servlet.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Tomcat-1-configuration (TODO).md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../images/servlet.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../../../.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Java/JVM/Java-JVM (TODO).md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Java/JVM/Java-JVM (TODO).md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Java/concurrent_programming/Java-分布式锁.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Java/concurrent_programming/Java-分布式锁.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Java/concurrent_programming/概述.xmind" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Java/concurrent_programming/概述.xmind" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Redis/redis-0-overview.xmind" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Redis/redis-0-overview.xmind" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SpringBoot-11-testing.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../SpringBoot-11-testing.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Java/JVM/JVM-overview.drawio" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Java/JVM/JVM-overview.drawio" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../SpringBoot-12-actuator.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../SpringBoot-12-actuator.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SpringBoot-4-annotations.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../SpringBoot-4-annotations.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Top-to-bottom.xmind" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Top-to-bottom.xmind" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

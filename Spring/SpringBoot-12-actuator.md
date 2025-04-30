@@ -15,7 +15,7 @@
    ```properties
    management.endpoint.web.exposure.include=health,prometheus
    ```
-2. Restrict visitor IP address
+2. (DEPRECATED, CANNOT FIND THIS IN SPRING DOC!) Restrict visitor IP address
 
    ```properties
    management.endpoint.health.allowed-ip=127.0.0.1
