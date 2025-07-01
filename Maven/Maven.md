@@ -24,6 +24,24 @@
 
 
 
+* `runtime` 使用场景示例：Spring Boot 集成 H2数据库
+
+```xml
+<dependency>
+    <groupId>com.h2database</groupId>
+    <artifactId>h2</artifactId>
+    <versionId>1.4.200</versionId>
+    <scope>runtime</scope>
+</dependency>
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-data-jpa</artifactId>
+    <versionId>2.3.4.RELEASE</versionId>
+</dependency>
+```
+
+
+
 #### 为何 `system` 不推荐使用以及取代方案
 
 * 原因：不推荐使用是因为写死了路径
