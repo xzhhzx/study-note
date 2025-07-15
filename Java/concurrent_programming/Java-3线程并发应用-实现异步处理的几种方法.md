@@ -2,7 +2,7 @@
 
 ### 同步 vs. 异步
 
-同步需要等待被调用任务执行完成；异步不需要等待被调用任务执行完成。（同步等价于阻塞，异步等价于非阻塞）
+同步需要等待被调用任务执行完成；异步不需要等待被调用任务执行完成。（同步等价于阻塞，异步等价于非阻塞）。典型使用场景：发送短信、邮件
 
 
 
@@ -21,11 +21,10 @@
 相对方式1，使用 `Future` 能够**取到异步线程的返回值**。之所以 `Future` 能提供这种额外能力，本质是因为：
 * 异步线程使用的是 `java.lang.Runnable` 的 `void run()` 方法，没有返回值
 * `Future`接口使用的是 JDK 1.5 新引入的 `java.util.concurrent.Callable<V>` 的 `V call()` 方法，有返回值（类型为`V`）
-* `CompletableFuture` 类是 JDK 1.8 新引入的：
+* `CompletableFuture` 类是 JDK 1.8 新引入的。当你有一个异步任务A在执行中，执行完成后想再根据A的结果继续执行另一个异步任务B，形成一个“任务流”，此时就可以使用 `CompletableFuture`：
 
-> `CompletableFuture` are Futures that also allow you to **string tasks together in a chain**. You can use them to tell some worker thread to "go do some task X, and when you're done, go do this other thing using the result of X". Using `CompletableFutures`, you can do something (e.g. some callback logic) with the result of the operation without actually blocking a thread to wait for the result.
->
-> Ref: https://stackoverflow.com/a/35347215
+	> `CompletableFuture` are Futures that also allow you to **string tasks together in a chain**. You can use them to tell some worker thread to "go do some task X, and when you're done, go do this other thing using the result of X". Using `CompletableFutures`, you can do something (e.g. some callback logic) with the result of the operation without actually blocking a thread to wait for the result.
+	> Ref: https://stackoverflow.com/a/35347215
 
 
 
@@ -138,8 +137,8 @@ public class AsyncApplication {
 
 * `SimpleAsyncTaskExecutor`：不是真的线程池，这个类不重用线程，默认每次调用都会创建一个新的线程。
 * `SyncTaskExecutor`：这个类没有实现异步调用，只是一个同步操作。只适用于不需要多线程的地方。
-* `ConcurrentTaskExecutor`：Executor的适配类，不推荐使用。如果ThreadPoolTaskExecutor不满足要求时，才用考虑使用这个类。
-* `SimpleThreadPoolTaskExecutor`：是Quartz的SimpleThreadPool的类。线程池同时被quartz和非quartz使用，才需要使用此类。
+* `ConcurrentTaskExecutor`：Executor的适配类，不推荐使用。如果 `ThreadPoolTaskExecutor` 不满足要求时，才用考虑使用这个类。
+* `SimpleThreadPoolTaskExecutor`：是Quartz的 `SimpleThreadPool` 的类。线程池同时被quartz和非quartz使用，才需要使用此类。
 * `ThreadPoolTaskExecutor`：最常使用，推荐。 其实质是对java.util.concurrent.ThreadPoolExecutor的包装。
 
 
@@ -174,6 +173,10 @@ public void asyncMethod() {
 其实本质上来说，前三种方法是类似的，都是通过异步线程（或线程池）解决。所以对比的是异步线程 vs. 消息队列：
 
 * 异步线程（池）在大量并发请求的情况下会影响系统性能，同时导致异步处理任务的堆积。试想100个并发请求，每个请求又需要一个额外的异步线程，那这样最多就有200个线程同时运行，大量线程在同时运行，系统性能会下降。如果使用线程池，还存在线程池是否会因为任务过多而拒绝异步任务的问题：如果拒绝，那需要异步处理的业务逻辑不会被执行；如果不拒绝，那这么多任务导致等待队列大量积压，甚至OOM。而使用Kafka 则解决了这个问题。**本质上，使用异步线程方式的任务堆积是在内存中的，而使用Kafka方式的任务堆积是在磁盘中的，这就很好避免了OOM的问题，也缓解了CPU压力。**
+* 因此：
+  * 对于并发量不是特别大、任务耗时短的场景，可使用线程池
+  * 对于并发量极大、任务耗时长的场景，考虑用Kafka
+
 
 
 
